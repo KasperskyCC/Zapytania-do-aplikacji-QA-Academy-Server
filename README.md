@@ -5,5 +5,5 @@
 * Node.js
 * yarn
 
-## Uruchamianie testów
+## Uruchamianie testów w katalogu projektu
 ```yarn newman run "QA Academy Server.postman_collection.json"```
