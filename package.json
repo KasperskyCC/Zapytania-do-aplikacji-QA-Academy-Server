@@ -1,8 +1,22 @@
 {
   "scripts": {
-    "test:newman": "yarn newman run \"QA Academy Server.postman_collection.json\""
+    "test": "newman run \"QA Academy Server.postman_collection.json\""
   },
-  "dependencies": {
+  "name": "QA Academy Server Collection",
+  "description": "`npm run test`",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KasperskyCC/Zapytania-do-aplikacji-QA-Academy-Server"
+  },
+  "author": "Kaspersky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KasperskyCC/Zapytania-do-aplikacji-QA-Academy-Server/issues"
+  },
+  "homepage": "https://github.com/KasperskyCC/Zapytania-do-aplikacji-QA-Academy-Server",
+  "devDependencies": {
     "newman": "^5.3.2"
   }
 }
