@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/KasperskyCC/Zapytania-do-aplikacji-QA-Academy-Server"
   },
-  "author": "Kaspersky",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/KasperskyCC/Zapytania-do-aplikacji-QA-Academy-Server/issues"
