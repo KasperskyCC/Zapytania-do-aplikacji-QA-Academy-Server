@@ -1,8 +1,7 @@
 {
-  "name": "Zapytania",
-  "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "scripts": {
+    "test:newman": "yarn newman run \"QA Academy Server.postman_collection.json\""
+  },
   "dependencies": {
     "newman": "^5.3.2"
   }
