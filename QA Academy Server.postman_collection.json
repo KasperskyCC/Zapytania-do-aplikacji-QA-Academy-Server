@@ -40,6 +40,19 @@
 			"item": [
 				{
 					"name": "/auth/login user_one",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    pm.environment.set(\"authToken\", pm.response.json().token)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -67,6 +80,19 @@
 				},
 				{
 					"name": "/auth/login user_two",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    pm.environment.set(\"authToken\", pm.response.json().token)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -94,6 +120,19 @@
 				},
 				{
 					"name": "/auth/login admin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (pm.response.code === 200) {",
+									"    pm.environment.set(\"authToken\", pm.response.json().token)",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [],
@@ -321,6 +360,18 @@
 								],
 								"type": "text/javascript"
 							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var new_book_id = pm.collectionVariables.get(\"new_book_id\");",
+									"console.log(new_book_id)",
+									"pm.test(\"Check if the book id is not empty\", () => {",
+									"    pm.expect(new_book_id).is.not.null;});"
+								],
+								"type": "text/javascript"
+							}
 						}
 					],
 					"request": {
@@ -446,6 +497,16 @@
 			]
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{user_one-token}}{{user_two-token}}{{admin-token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
@@ -474,12 +535,12 @@
 		},
 		{
 			"key": "admin-token",
-			"value": "{{admin-token}}",
+			"value": "",
 			"type": "string"
 		},
 		{
 			"key": "user_one-token",
-			"value": "{{user_one-token}}",
+			"value": "",
 			"type": "string"
 		},
 		{
@@ -488,7 +549,7 @@
 		},
 		{
 			"key": "user_two-token",
-			"value": "{{user_two-token}}",
+			"value": "",
 			"type": "string"
 		}
 	]
